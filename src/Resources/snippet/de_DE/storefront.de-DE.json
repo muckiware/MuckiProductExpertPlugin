@@ -1,3 +1,9 @@
 {
-    "muwaProductExpert": {}
+    "muwaProductExpert": {
+        "productDetail": {
+            "tab": {
+                "label": "Produkt Experte"
+            }
+        }
+    }
 }
