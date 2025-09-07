@@ -22,7 +22,8 @@
 		}
 	},
 	"require" : {
-		"php" : ">= 8.2"
+		"php" : ">= 8.2",
+		"brick/phonenumber": "^0.8.0"
 	},
 	"require-dev" : {
 		"phpstan/phpstan" : "*"
