@@ -1,0 +1,81 @@
+{
+	"name": "custom_mucki-product-expert",
+	"config": {
+		"label": {
+			"en-GB": "Product expert",
+			"de-DE": "Produkt Experte"
+		}
+	},
+	"relations": [
+		{
+			"entityName": "product"
+		}
+	],
+	"customFields": [
+		{
+			"name": "custom_product_show_expert",
+			"type": "bool",
+			"config": {
+				"customFieldType": "switch",
+				"customFieldPosition": 10,
+				"label": {
+					"en-GB": "Show product expert",
+					"de-DE": "Zeige Produkt Experte"
+				},
+				"componentName": "sw-field",
+				"type": "switch"
+			}
+		},
+		{
+			"name": "custom_product_show_expert_name",
+			"type": "text",
+			"config": {
+				"customFieldType": "text",
+				"customFieldPosition": 20,
+				"label": {
+					"de-DE": "Produkt Experte Name",
+					"en-GB": "Product Expert Name"
+				},
+				"config": {
+					"time_24hr": true
+				},
+				"componentName": "sw-field",
+				"type": "text"
+			}
+		},
+		{
+			"name": "custom_product_show_expert_info",
+			"type": "text",
+			"config": {
+				"customFieldType": "text",
+				"customFieldPosition": 30,
+				"label": {
+					"de-DE": "Produkt Experte Info",
+					"en-GB": "Product Expert Info"
+				},
+				"config": {
+					"time_24hr": true
+				},
+				"componentName": "sw-field",
+				"type": "text"
+			}
+		},
+		{
+			"name": "custom_product_show_expert_telephone",
+			"type": "text",
+			"config": {
+				"customFieldType": "text",
+				"customFieldPosition": 40,
+				"label": {
+					"de-DE": "Produkt Experte Telefon",
+					"en-GB": "Product Expert Telephone"
+				},
+				"config": {
+					"time_24hr": true
+				},
+				"componentName": "sw-field",
+				"type": "text"
+			}
+		}
+	]
+}

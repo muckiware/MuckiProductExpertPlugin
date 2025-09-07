@@ -11,10 +11,6 @@
  */
 namespace MuckiProductExpertPlugin\Services;
 
-use Psr\Log\LoggerInterface;
-
-use MuckiProductExpertPlugin\Core\Defaults as PluginDefaults;
-
 /**
  *
  */

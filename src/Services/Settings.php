@@ -11,13 +11,11 @@
  */
 namespace MuckiProductExpertPlugin\Services;
 
-use Symfony\Component\HttpKernel\KernelInterface;
 use Shopware\Core\System\SystemConfig\SystemConfigService;
-use Shopware\Core\DevOps\Environment\EnvironmentHelper;
+use Symfony\Component\HttpKernel\KernelInterface;
 
-use MuckiProductExpertPlugin\Core\Defaults as PluginDefaults;
-use MuckiProductExpertPlugin\Services\Helper as PluginHelper;
 use MuckiProductExpertPlugin\Core\ConfigPath;
+use MuckiProductExpertPlugin\Services\Helper as PluginHelper;
 
 class Settings
 {

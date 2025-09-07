@@ -17,6 +17,9 @@ use Shopware\Core\Framework\Plugin\Context\DeactivateContext;
 use Shopware\Core\Framework\Plugin\Context\InstallContext;
 use Shopware\Core\Framework\Plugin\Context\UninstallContext;
 use Shopware\Core\Framework\Plugin\Context\UpdateContext;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
+
+use MuckiProductExpertPlugin\CustomFields\CustomFieldUpdater;
 
 /**
  * Add dependencies from composer
@@ -33,6 +36,7 @@ class MuckiProductExpertPlugin extends Plugin
     public function install(InstallContext $installContext): void
     {
         parent::install($installContext);
+        $this->getCustomFieldUpdater()->sync();
     }
 
     /**
@@ -45,6 +49,8 @@ class MuckiProductExpertPlugin extends Plugin
         if ($uninstallContext->keepUserData()) {
             return;
         }
+
+        $this->getCustomFieldUpdater()->remove();
     }
 
     public function activate(ActivateContext $activateContext): void
@@ -61,7 +67,8 @@ class MuckiProductExpertPlugin extends Plugin
 
     public function update(UpdateContext $updateContext): void
     {
-        // Update your plugin
+        parent::update($updateContext);
+        $this->getCustomFieldUpdater()->sync();
     }
 
     public function postInstall(InstallContext $installContext): void
@@ -72,5 +79,20 @@ class MuckiProductExpertPlugin extends Plugin
     public function postUpdate(UpdateContext $updateContext): void
     {
         //postUpdate
+    }
+    private function getCustomFieldUpdater(): CustomFieldUpdater
+    {
+        /** @var EntityRepository $customFieldSetRepository */
+        $customFieldSetRepository = $this->container->get('custom_field_set.repository');
+
+        /** @var EntityRepository $customFieldRepository */
+        $customFieldRepository = $this->container->get('custom_field.repository');
+
+        return new CustomFieldUpdater(
+            $customFieldSetRepository,
+            $customFieldRepository,
+            $this->path,
+            'MuckiProductExpertPlugin'
+        );
     }
 }
