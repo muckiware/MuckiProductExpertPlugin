@@ -1,0 +1,16 @@
+parameters:
+    level: 6
+    treatPhpDocTypesAsCertain: false
+    inferPrivatePropertyTypeFromConstructor: true
+    reportUnmatchedIgnoredErrors: false
+    tmpDir: var/cache/phpstan
+
+    paths:
+        - src
+
+    bootstrapFiles:
+        - bin/static-analyze-autoloader.php
+
+    ignoreErrors:
+        - identifier: missingType.generics
+

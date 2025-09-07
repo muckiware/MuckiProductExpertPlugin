@@ -1,0 +1,49 @@
+{
+	"name" : "muckiware/product-expert-plugin",
+	"description" : "Muckiware ProductExpert Plugin for Shopware 6",
+	"version": "v1.0.0",
+	"keywords": [
+		"shopware6",
+		"plugin"
+	],
+	"type" : "shopware-platform-plugin",
+	"license" : "MIT",
+	"authors": [
+		{
+			"name": "muckiware"
+		}
+	],
+	"extra" : {
+		"shopware-plugin-class" : "MuckiProductExpertPlugin\\MuckiProductExpertPlugin",
+		"copyright" : "(c) by muckiware",
+		"label" : {
+			"de-DE" : "Mucki ProductExpert Erweiterung",
+			"en-GB" : "Mucki ProductExpert Plugin"
+		}
+	},
+	"require" : {
+		"php" : ">= 8.2"
+	},
+	"require-dev" : {
+		"phpstan/phpstan" : "*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"MuckiProductExpertPlugin\\" : "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"MuckiProductExpertPlugin\\": "tests/"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"symfony/runtime": true,
+			"php-http/discovery": false
+		}
+	},
+	"scripts": {
+		"phpstan": "./vendor/bin/phpstan analyse -n --no-progress"
+	}
+}
